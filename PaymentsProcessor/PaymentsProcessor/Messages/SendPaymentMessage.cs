@@ -1,0 +1,19 @@
+﻿namespace PaymentsProcessor.Messages
+{
+    internal class SendPaymentMessage
+    {
+        public string FirstName { get; private set; }
+        public string LastName { get; private set; }
+        public string AccountNumber { get; private set; }
+        public decimal Amount { get; private set; }
+
+        public SendPaymentMessage(string firstName, string lastName, string accountNumber, decimal amount)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            AccountNumber = accountNumber;
+            Amount = amount;
+        }
+
+    }
+}
