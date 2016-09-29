@@ -14,7 +14,7 @@ namespace PaymentsProcessor.Actors
 
         public JobCoordinatorActor()
         {
-            _paymentWorker = Context.ActorOf(Context.DI().Props<PaymentWorkerActor>().WithRouter(FromConfig.Instance), "PaymentWorkers");
+            _paymentWorker = Context.ActorOf(Context.DI().Props<PaymentWorkerActor>(), "PaymentWorker");
 
 
             Receive<ProcessFileMessage>(

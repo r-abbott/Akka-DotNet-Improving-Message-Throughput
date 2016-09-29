@@ -9,8 +9,17 @@ namespace PaymentsProcessor.ExternalSystems
 
         public void Pay(string accountNumber, decimal amount)
         {
-            // Simulate communicating with external payment gateway
-            Thread.Sleep(200);
+            if (PeakTimeDemoSimulator.IsPeakHours && amount > 100)
+            {
+                Console.WriteLine($"Account Number {accountNumber} payment takes longer because is peak & > 100 ");
+
+                Thread.Sleep(200);
+            }
+            else
+            {
+                Thread.Sleep(200);
+            }
+            
         }
     }
 }

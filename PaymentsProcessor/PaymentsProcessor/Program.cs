@@ -21,15 +21,13 @@ namespace PaymentsProcessor
 
             IActorRef jobCoordinator = ActorSystem.ActorOf<JobCoordinatorActor>("JobCoordinator");
 
-            var jobTime = Stopwatch.StartNew();
+            PeakTimeDemoSimulator.StartDemo(2);
 
             jobCoordinator.Tell(new ProcessFileMessage("file1.csv"));
 
             Task.WaitAll(ActorSystem.WhenTerminated);
 
-            jobTime.Stop();
-
-            Console.WriteLine($"Job complete in {jobTime.ElapsedMilliseconds}ms");
+            Console.WriteLine($"Job complete");
             Console.ReadKey();
 
         }
