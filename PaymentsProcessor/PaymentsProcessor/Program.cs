@@ -21,7 +21,7 @@ namespace PaymentsProcessor
 
             IActorRef jobCoordinator = ActorSystem.ActorOf<JobCoordinatorActor>("JobCoordinator");
 
-            PeakTimeDemoSimulator.StartDemo(2);
+            PeakTimeDemoSimulator.StartDemo(6);
 
             jobCoordinator.Tell(new ProcessFileMessage("file1.csv"));
 

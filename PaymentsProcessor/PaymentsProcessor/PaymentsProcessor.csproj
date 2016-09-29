@@ -74,6 +74,7 @@
     <Compile Include="Messages\PaymentSentMessage.cs" />
     <Compile Include="Actors\PaymentWorkerActor.cs" />
     <Compile Include="Messages\ProcessFileMessage.cs" />
+    <Compile Include="Messages\ProcessStashedPaymentsMessage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Messages\SendPaymentMessage.cs" />
