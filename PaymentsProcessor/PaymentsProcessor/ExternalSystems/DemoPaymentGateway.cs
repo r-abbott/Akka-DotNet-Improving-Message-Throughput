@@ -9,7 +9,7 @@ namespace PaymentsProcessor.ExternalSystems
 
         public async Task<PaymentReceipt> Pay(string accountNumber, decimal amount)
         {
-            return await Task.Delay(2000)
+            return await Task.Delay(Random.Next(1000,5000))
                 .ContinueWith(
                 task =>
                 {
