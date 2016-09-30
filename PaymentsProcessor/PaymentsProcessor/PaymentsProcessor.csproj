@@ -70,6 +70,7 @@
     <Compile Include="ExternalSystems\DemoPaymentGateway.cs" />
     <Compile Include="ExternalSystems\IPaymentGateway.cs" />
     <Compile Include="Actors\JobCoordinatorActor.cs" />
+    <Compile Include="ExternalSystems\PaymentReceipt.cs" />
     <Compile Include="ExternalSystems\PeakTimeDemoSimulator.cs" />
     <Compile Include="Messages\PaymentSentMessage.cs" />
     <Compile Include="Actors\PaymentWorkerActor.cs" />

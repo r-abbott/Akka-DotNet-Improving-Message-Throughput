@@ -1,7 +1,9 @@
-﻿namespace PaymentsProcessor.ExternalSystems
+﻿using System.Threading.Tasks;
+
+namespace PaymentsProcessor.ExternalSystems
 {
     internal interface IPaymentGateway
     {
-        void Pay(string accountNumber, decimal amount);
+        Task<PaymentReceipt> Pay(string accountNumber, decimal amount);
     }
 }

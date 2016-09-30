@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading;
+using System.Threading.Tasks;
 
 namespace PaymentsProcessor.ExternalSystems
 {
@@ -7,19 +7,18 @@ namespace PaymentsProcessor.ExternalSystems
     {
         private static readonly Random Random = new Random();
 
-        public void Pay(string accountNumber, decimal amount)
+        public async Task<PaymentReceipt> Pay(string accountNumber, decimal amount)
         {
-            if (PeakTimeDemoSimulator.IsPeakHours && amount > 100)
-            {
-                Console.WriteLine($"Account Number {accountNumber} payment takes longer because is peak & > 100 ");
-
-                Thread.Sleep(200);
-            }
-            else
-            {
-                Thread.Sleep(200);
-            }
-            
+            return await Task.Delay(2000)
+                .ContinueWith(
+                task =>
+                {
+                    return new PaymentReceipt
+                    {
+                        AccountNumber = accountNumber,
+                        PaymentConfirmationReceipt = Guid.NewGuid().ToString()
+                    };
+                });
         }
     }
 }

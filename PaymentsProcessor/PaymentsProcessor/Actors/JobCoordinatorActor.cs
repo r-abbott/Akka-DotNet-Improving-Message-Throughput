@@ -4,6 +4,7 @@ using Akka.Routing;
 using PaymentsProcessor.Messages;
 using System.Collections.Generic;
 using System.IO;
+using System;
 
 namespace PaymentsProcessor.Actors
 {
@@ -25,6 +26,8 @@ namespace PaymentsProcessor.Actors
             Receive<PaymentSentMessage>(
                 message =>
                 {
+                    Console.WriteLine($"Received payment confirmation [{message.AccountNumber}] {message.PaymentConfirmationReceipt}");
+
                     _numberOfRemainingPayments--;
                     var jobIsComplete = _numberOfRemainingPayments == 0;
 
